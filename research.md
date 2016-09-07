@@ -5,10 +5,8 @@
  it's fucking cool to do
  it will get you thinking about other things
 
- #include <sys/auxv.h>
-
- void *vdso = (uintptr_t) getauxval(AT_SYSINFO_EHDR);
-
+ `#include <sys/auxv.h>
+ `void *vdso = (uintptr_t) getauxval(AT_SYSINFO_EHDR);
 
  The "vDSO" (virtual dynamic shared object) is a small shared library
  that the kernel automatically maps into the address space of all
@@ -22,7 +20,7 @@
 
  the vDSO function used to determine the preferred method of making a system call is named "__kernel_vsyscall"
 
- **vDSO duck punch primer**
+ # vDSO duck punch primer
  maybe we gotta get time of day info for our app but don't wanna make the context switch for every call that requires
  a time of day query.
 
@@ -55,8 +53,8 @@
 
  !!PSA!!
  Note that the vDSO that is used is based on the ABI of your user-
-        space code and not the ABI of the kernel.  Thus, for example, when
-        you run an i386 32-bit ELF binary, you'll get the same vDSO
+        space code and not the ABI of the kernel.  what i mean is... when
+        you compile an i386 32-bit ELF binary, you'll get the same vDSO
         regardless of whether you run it under an i386 32-bit kernel or under
         an x86_64 64-bit kernel.
 
