@@ -1,4 +1,4 @@
-#VDSO patching for make do more user kernel be more like**
+# VDSO patching for make do more user kernel be more like**
 
  good reasons to do this.
  it gives you some persistence in a way that it will give you access to kernel space from applications that map this ABI specific vDSO
