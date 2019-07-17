@@ -78,5 +78,3 @@
         __vdso_time            LINUX_2.6
 
 
-test
-        
